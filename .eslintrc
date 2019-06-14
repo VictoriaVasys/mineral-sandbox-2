@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:flowtype/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "plugins": [
+    "emotion",
+    "flowtype",
+    "jsx-a11y",
+    "prettier",
+    "react"
+  ],
+  "rules": {
+    "curly": ["error", "all"],
+    "emotion/syntax-preference": ["error", "object"],
+    // Temporarily disable rule until issue is resolved.
+    // https://github.com/gajus/eslint-plugin-flowtype/issues/224
+    "flowtype/no-types-missing-file-annotation": 0,
+    "jsx-a11y/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      },
+      "allowChildren": true
+    }],
+    "no-console": ["error", {
+      "allow": ["warn", "error"]
+    }],
+    "no-unused-vars": ["error", {"vars": "all", "varsIgnorePattern": "[Ii]gnore"}],
+    "prettier/prettier": "error"
+  }
+}
